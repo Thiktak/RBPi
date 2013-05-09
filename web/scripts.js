@@ -23,13 +23,35 @@ function focusTabIndex(i) {
   }
 }
 
+function windowLocation(href, hash) {
+  hash = hash || '';
+
+  if( hash )
+    href += '#' + hash;
+
+  if( href )
+    return (window.location.href = href);
+}
+
+$(window).ready(function() {
+  if( window.location.hash ) {
+    hash = window.location.hash.substring(1);
+    el = $('#' + hash).parents('tr[tabindex]');
+    var pos = el.attr('tabindex');
+    el.focus();
+  }
+});
+
+$(document).bind('keydown', 'space', function () {
+  goTo('#content');
+  e.preventDefault();
+});
+
 $(window).bind('keypress', function(e) {
   switch(e.keyCode) {
-    case 0 : // spacebar
-      goTo('#content');
-      e.preventDefault();
+    case 32 : // spacebar
       break;
-
+    
     case 38 : // DOWN
       focusTabIndex(-1); e.preventDefault();
       break;
@@ -38,9 +60,18 @@ $(window).bind('keypress', function(e) {
       focusTabIndex(1); e.preventDefault();
       break;
 
+    case 37 : // LEFT
+      windowLocation($('a.prev').attr('href'), $('.ariane li:last-child a').attr('data-id'));
+      break;
+
     case 13 : // ENTER
-      window.location.href = $('tr[tabindex]:focus a.link').attr('href');
+    case 39 : // RIGHT
+      windowLocation($('tr[tabindex]:focus a.link').attr('href'));
       e.preventDefault();
+      break;
+
+    default:
+      console.log('key:' + e.keyCode);
       break;
   }
 });

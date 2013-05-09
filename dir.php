@@ -1,6 +1,9 @@
 <?php
 
 include_once dirname(__FILE__) . '/commons.php';
+use \Michelf\Markdown; // dependencies Markdown
+
+
 
 if( !defined('DISPLAY_HTML') )
   define('DISPLAY_HTML', true);
@@ -16,6 +19,9 @@ $dirToExplore = trim($_SERVER['REQUEST_URI'], '/');
 
 $tabIndex = 1;
 
+$ariane = explode(DIRECTORY_SEPARATOR, trim($dirToExplore, DIRECTORY_SEPARATOR));
+$ariane = array_merge(array('/' => 'rb(&pi;)'), array_combine($ariane, $ariane));
+
 if( DISPLAY_HTML ): ?><!DOCTYPE html>
 <html>
   <head>
@@ -25,7 +31,7 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
     <link rel="stylesheet" href="<?php echo BASEDIR_RBPI; ?>/web/style.css">
   </head>
   <body class="directory">
-    <div id="content">
+    <div>
       <div class="content">
         <div id="background"></div>
 <?php endif; ?>
@@ -33,9 +39,8 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
       <h1>
         <span class="pi">Index of</span>
         <ul class="ariane">
-          <li><a href="<?php echo DIRECTORY_SEPARATOR; ?>" class="pi">rb(&pi;)</a></li>
-        <?php $dirs = array(null); foreach( explode(DIRECTORY_SEPARATOR, trim($dirToExplore, DIRECTORY_SEPARATOR)) as $dir ): if( empty($dir) ) continue; $dirs[] = $dir; ?>
-          <li><a href="<?php echo implode(DIRECTORY_SEPARATOR, $dirs); ?>" class="ppi"><?php echo $dir; ?></a></li>
+        <?php $dirs = array(); $i = 0; foreach( $ariane as $path => $dir ): if( empty($dir) ) continue; $dirs[] = $path; $i++; ?>
+          <li><a data-id="<?php echo $i > 1 ? $dir : null; ?>" href="<?php echo DIRECTORY_SEPARATOR . trim(implode(DIRECTORY_SEPARATOR, $dirs), DIRECTORY_SEPARATOR); ?>" class="<?php echo $i == 1 ? 'pi' : 'ppi'; ?><?php echo $i == count($ariane) - 1 ? ' prev' : null; ?>"><?php echo $dir; ?></a></li>
         <?php endforeach; ?>
         </ul>
       </h1>
@@ -59,7 +64,7 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
               <img src="<?php echo $dir['icon']; ?>" alt="[DIR] <?php echo $dir['icon']; ?>" />
             </td>
             <td>
-              <a href="<?php echo trim($href, DIRECTORY_SEPARATOR); ?>" class="link"><?php echo $dir['name']; ?></a>
+              <a tabindex="-1" id="<?php echo urlencode($dir['name']); ?>" href="<?php echo trim($href, DIRECTORY_SEPARATOR); ?>" class="link"><?php echo $dir['name']; ?></a>
             </td>
             <td>
               <?php echo date(trim(DATE_RFC1036, ' O')); ?>
@@ -78,6 +83,12 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
         <?php endforeach; ?>
         </tbody>
       </table>
+
+      <?php if( file_exists($f = ROOT_RBPI . $dirToExplore . DIRECTORY_SEPARATOR . 'readme.md') ): ?>
+      <div class="md">
+        <?php echo Markdown::defaultTransform(file_get_contents($f)); ?>
+      </div>
+      <?php endif; ?>
 
       <?php echo $_SERVER['SERVER_SIGNATURE']; ?>
 
