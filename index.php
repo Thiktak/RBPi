@@ -36,7 +36,7 @@
  */
 
 include dirname(__FILE__) . '/commons.php';
-echo BASEDIR_RBPI;
+
 if( trim(realpath(dirname(__FILE__) . '/..'), '/') != trim($_SERVER['DOCUMENT_ROOT'] . $_SERVER['REQUEST_URI'], '/') )
 {
     include dirname(__FILE__) . '/dir.php';

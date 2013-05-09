@@ -1,8 +1,8 @@
-ErrorDocument 404 /RBPi/_index/errors.php?error=404
-ErrorDocument 401 /RBPi/_index/errors.php?error=401
-ErrorDocument 403 /RBPi/_index/errors.php?error=403
-ErrorDocument 406 /RBPi/_index/errors.php?error=406
-ErrorDocument 500 /RBPi/_index/errors.php?error=500
-ErrorDocument 503 /RBPi/_index/errors.php?error=503
+ErrorDocument 404 /RBPi/errors.php?error=404
+ErrorDocument 401 /RBPi/errors.php?error=401
+ErrorDocument 403 /RBPi/errors.php?error=403
+ErrorDocument 406 /RBPi/errors.php?error=406
+ErrorDocument 500 /RBPi/errors.php?error=500
+ErrorDocument 503 /RBPi/errors.php?error=503
 
 DirectoryIndex index.php index.html /index.php
