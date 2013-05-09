@@ -67,7 +67,7 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
               <a tabindex="-1" id="<?php echo urlencode($dir['name']); ?>" href="<?php echo trim($href, DIRECTORY_SEPARATOR); ?>" class="link"><?php echo $dir['name']; ?></a>
             </td>
             <td>
-              <?php echo date(trim(DATE_RFC1036, ' O')); ?>
+              <?php echo date(trim(DATE_RFC1036, ' O'), $dir['modified']); ?>
             </td>
             <td>
               <?php if( $dir['size'] ): ?>

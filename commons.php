@@ -51,6 +51,7 @@ function list_files($dir = '.', $listFile = true, $listDir = true)
           'icon' => is_file($_file) ? 'file' : 'dir',
           'hidden' => false,
           'size' => 0,
+          'modified' => null,
           'description' => null
         );
 
@@ -59,6 +60,8 @@ function list_files($dir = '.', $listFile = true, $listDir = true)
 
         if( $options['hidden'] )
             continue;
+
+        $options['modified'] = @filemtime($_file);
 
         if( !file_exists($options['icon']) )
         {
