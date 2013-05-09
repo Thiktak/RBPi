@@ -26,7 +26,7 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>rp(&pi;) - <?php echo $displayDir; ?></title>
+    <title>rp(&pi;) - <?php echo ucfirst($dirToExplore); ?></title>
     <meta name="author" content="Olivarès Georges" />
     <link rel="stylesheet" href="<?php echo BASEDIR_RBPI; ?>/web/style.css">
   </head>
