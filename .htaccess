@@ -4,3 +4,7 @@ deny from all
 <Files errors.php>
   allow from all
 </Files>
+
+<Files *.md>
+  allow from all
+</Files>
