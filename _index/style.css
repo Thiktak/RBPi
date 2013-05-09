@@ -18,7 +18,7 @@ body.directory #background {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   opacity: .25;
-  background-image: url('/_index/raspberry.png');
+  background-image: url('./raspberry.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: auto 50%;
@@ -29,7 +29,7 @@ body.directory #background {
   color: white;
   position: relative;
   background-color: #1B191A;
-  background-image: url('/_index/raspberry.png');
+  background-image: url('./raspberry.png');
   background-repeat: no-repeat;
   background-position: center 25%;
   background-size: auto 50%;

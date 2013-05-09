@@ -52,7 +52,7 @@ define('DISPLAY_UP', false);
     <meta charset="utf-8" />
     <title>rb(&pi;)</title>
     <meta name="author" content="Olivarès Georges" />
-    <link rel="stylesheet" href="/_index/style.css">
+    <link rel="stylesheet" href="<?php echo BASEDIR_RBPI; ?>/_index/style.css">
   </head>
   <body class="index">
     <a data-scroll-to="content" href="#content">
@@ -81,8 +81,8 @@ define('DISPLAY_UP', false);
     <footer id="footer" role="footer">
       &copy; Olivarès Georges - rb(&pi;) v<?php echo RBPI_VERSION; ?> - PHP <?php echo phpversion(); ?>
     </footer>
-    <script src="_index/jquery.min.js"></script>
-    <script src="_index/jquery.scrollTo.min.js"></script>
+    <script src="<?php echo BASEDIR_RBPI; ?>/_index/jquery.min.js"></script>
+    <script src="<?php echo BASEDIR_RBPI; ?>/_index/jquery.scrollTo.min.js"></script>
     <script>
       function goTo(_where) { $.scrollTo(_where, 2000); }
 

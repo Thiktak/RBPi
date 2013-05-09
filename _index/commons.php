@@ -5,6 +5,8 @@ define('RBPI_VERSION', '0.0.1');
 define('BASEDIR_INDEX', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 define('BASEDIR', realpath(BASEDIR_INDEX . '..') . DIRECTORY_SEPARATOR);
 define('DIR_INDEX', str_replace(BASEDIR, null, realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR));
+define('BASEDIR_RBPI', str_replace($_SERVER['DOCUMENT_ROOT'], null, BASEDIR));
+define('ROOT_RBPI', $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR);
 
 function list_files($dir = '.', $listFile = true, $listDir = true)
 {
@@ -41,8 +43,8 @@ function list_files($dir = '.', $listFile = true, $listDir = true)
         {
             if( file_exists($f = $file . '/' . $options['icon'] . '.png') ) $options['icon'] = $f;
             else if( file_exists($f = $file . '/' . $options['icon']) ) $options['icon'] = $f;
-            else if( file_exists($f = DIR_INDEX . $options['icon'] . '.png') ) $options['icon'] = DIRECTORY_SEPARATOR . $f;
-            else if( file_exists($f = DIR_INDEX . $options['icon']) ) $options['icon'] = DIRECTORY_SEPARATOR . $f;
+            else if( file_exists(ROOT_RBPI . ($f = BASEDIR_RBPI . DIR_INDEX . $options['icon'] . '.png')) ) $options['icon'] = $f;
+            else if( file_exists(ROOT_RBPI . ($f = BASEDIR_RBPI . DIR_INDEX . $options['icon'])) ) $options['icon'] = $f;
         }
 
         if( is_file($_file) )
