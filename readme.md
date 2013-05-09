@@ -29,19 +29,19 @@ cp RBPI/install/.htaccess .htaccess
 
 #### Apache
 
-Edit `httpd.conf` or any `.htaccess` 
+Edit __httpd.conf__ or any __.htaccess__
 
 ``DirectoryIndex index.php index.html /index.php``
 
 #### Lighttpd 
 
-Edit `nginx.conf`
+Edit __lighttpd.conf__
 
 ``index-file.names += ( "index.php", "index.php", "/index.php")``
 
 #### Ngnix
 
-Edit `nginx.conf`
+Edit __nginx.conf__
 
 ``index  index.php index.html /index.php``
 
