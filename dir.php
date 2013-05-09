@@ -14,6 +14,8 @@ $displayDir = preg_replace('`/{1,}`', DIRECTORY_SEPARATOR, $displayDir);
 
 $dirToExplore = trim($_SERVER['REQUEST_URI'], '/');
 
+$tabIndex = 1;
+
 if( DISPLAY_HTML ): ?><!DOCTYPE html>
 <html>
   <head>
@@ -42,7 +44,7 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
         <thead>
           <tr>
             <th>&nbsp;</th>
-            <th>Name</th>
+            <th>Name</th> 
             <th>Last modified</th>
             <th>Size</th>
             <th>Description</th>
@@ -52,12 +54,12 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
         <?php foreach( list_files(ROOT_RBPI . $dirToExplore, true, true) as $href => $dir ):
           if( !DISPLAY_UP && in_array($href, array('/.', '/..'))) continue;
         ?>
-          <tr>
+          <tr tabindex="<?php echo $tabIndex++; ?>">
             <td class="icon">
               <img src="<?php echo $dir['icon']; ?>" alt="[DIR] <?php echo $dir['icon']; ?>" />
             </td>
             <td>
-              <a href="<?php echo trim($href, DIRECTORY_SEPARATOR); ?>"><?php echo $dir['name']; ?></a>
+              <a href="<?php echo trim($href, DIRECTORY_SEPARATOR); ?>" class="link"><?php echo $dir['name']; ?></a>
             </td>
             <td>
               <?php echo date(trim(DATE_RFC1036, ' O')); ?>
@@ -82,5 +84,8 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
 <?php if( DISPLAY_HTML ): ?>
       </div>
     </div>
+    <script src="<?php echo BASEDIR_RBPI; ?>/web/jquery.min.js"></script>
+    <script src="<?php echo BASEDIR_RBPI; ?>/web/jquery.scrollTo.min.js"></script>
+    <script src="<?php echo BASEDIR_RBPI; ?>/web/scripts.js"></script>
   </body>
 </html><?php endif; ?>

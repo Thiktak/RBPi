@@ -83,19 +83,6 @@ define('DISPLAY_UP', false);
     </footer>
     <script src="<?php echo BASEDIR_RBPI; ?>/web/jquery.min.js"></script>
     <script src="<?php echo BASEDIR_RBPI; ?>/web/jquery.scrollTo.min.js"></script>
-    <script>
-      function goTo(_where) { $.scrollTo(_where, 2000); }
-
-      $('a[data-scroll-to]').on('click', function(e) {
-          goTo($(this).attr('href'));
-          e.preventDefault();
-      });
-      $(window).bind('keypress', function(e) {
-          if (e.which == 32) {
-              goTo('#content');
-              e.preventDefault();
-          }
-      });
-    </script>
+    <script src="<?php echo BASEDIR_RBPI; ?>/web/scripts.js"></script>
   </body>
 </html>
