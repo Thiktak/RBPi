@@ -131,7 +131,8 @@ ul.ariane li a:hover { background-color: rgba(189, 17, 67, .1); }
   border-left: 5px solid darkred;
 }
 
-.md *{ font-family: arial, serif; }
+.md { font-size: .9em; }
+.md * { font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans'; }
 
 .md p{ text-align: justify; }
 
@@ -143,7 +144,7 @@ ul.ariane li a:hover { background-color: rgba(189, 17, 67, .1); }
 
 .md h2, .md h3{ padding:20px 0 0 0; }
 
-.md code { padding: .15em .25em; background-color: #eaeaea; font-family: courier; font-size: .75em; color: darkred; border: 1px solid #c0c0c0; border-radius: 5px; }
+.md code { padding: .15em .25em; background-color: #eaeaea; font-family: 'Lucida console', 'courier'; font-size: .75em; color: darkred; border: 1px solid #c0c0c0; border-radius: 5px; }
 .md pre code { display: block; padding: 1em; margin: .5em; background-color: #eaeaea; }
 
 @media screen and (max-width: 640px) {
