@@ -37,7 +37,7 @@
 
 include dirname(__FILE__) . '/_index/commons.php';
 
-if( trim(str_ireplace('index.php', '', $_SERVER['REQUEST_URI']), '/') )
+if( trim(realpath(dirname(__FILE__) . '/..'), '/') != trim($_SERVER['DOCUMENT_ROOT'] . $_SERVER['REQUEST_URI'], '/') )
 {
     include BASEDIR_INDEX . 'dir.php';
     exit();
