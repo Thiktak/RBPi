@@ -18,12 +18,12 @@ Installation
 
 ### 2. Install RB(pi)
 
-``
+```
 mv index.php index.old.php
 mv .htaccess .htaccess.old
 cp RBPI/install/* .
 cp RBPI/install/.htaccess .htaccess
-``
+```
 
 ### 3. Edit your server
 
