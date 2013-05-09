@@ -26,7 +26,7 @@ $message = preg_replace_callback('`\[([A-Z_]+)\]`', function($m) {
   <head>
     <title><?php echo $code; ?> - <?php echo $title; ?></title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="/_index/style.css">
+    <link rel="stylesheet" href="<?php echo BASEDIR_RBPI; ?>/_index/style.css">
   </head>
   <body class="error">
     <div id="error-links">
