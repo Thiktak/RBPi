@@ -20,7 +20,7 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
     <meta charset="utf-8" />
     <title>rp(&pi;) - <?php echo $displayDir; ?></title>
     <meta name="author" content="Olivarès Georges" />
-    <link rel="stylesheet" href="<?php echo BASEDIR_RBPI; ?>/_index/style.css">
+    <link rel="stylesheet" href="<?php echo BASEDIR_RBPI; ?>/web/style.css">
   </head>
   <body class="directory">
     <div id="content">

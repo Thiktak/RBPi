@@ -11,7 +11,7 @@
  * ============
  *   Add files into `/` server directory (/var/www for example)
  *     - /index.php
- *     - /_index/
+ *     - /web/
  *
  *    Apache
  *    ------
@@ -35,11 +35,11 @@
  *
  */
 
-include dirname(__FILE__) . '/_index/commons.php';
-
+include dirname(__FILE__) . '/commons.php';
+echo BASEDIR_RBPI;
 if( trim(realpath(dirname(__FILE__) . '/..'), '/') != trim($_SERVER['DOCUMENT_ROOT'] . $_SERVER['REQUEST_URI'], '/') )
 {
-    include BASEDIR_INDEX . 'dir.php';
+    include dirname(__FILE__) . '/dir.php';
     exit();
 }
 
@@ -52,7 +52,7 @@ define('DISPLAY_UP', false);
     <meta charset="utf-8" />
     <title>rb(&pi;)</title>
     <meta name="author" content="Olivarès Georges" />
-    <link rel="stylesheet" href="<?php echo BASEDIR_RBPI; ?>/_index/style.css">
+    <link rel="stylesheet" href="<?php echo BASEDIR_RBPI; ?>/web/style.css">
   </head>
   <body class="index">
     <a data-scroll-to="content" href="#content">
@@ -81,8 +81,8 @@ define('DISPLAY_UP', false);
     <footer id="footer" role="footer">
       &copy; Olivarès Georges - rb(&pi;) v<?php echo RBPI_VERSION; ?> - PHP <?php echo phpversion(); ?>
     </footer>
-    <script src="<?php echo BASEDIR_RBPI; ?>/_index/jquery.min.js"></script>
-    <script src="<?php echo BASEDIR_RBPI; ?>/_index/jquery.scrollTo.min.js"></script>
+    <script src="<?php echo BASEDIR_RBPI; ?>/web/jquery.min.js"></script>
+    <script src="<?php echo BASEDIR_RBPI; ?>/web/jquery.scrollTo.min.js"></script>
     <script>
       function goTo(_where) { $.scrollTo(_where, 2000); }
 

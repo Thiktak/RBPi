@@ -1,5 +1,7 @@
 <?php
 
+include_once dirname(__FILE__) . '/commons.php';
+
 $code = $get_error = isset($_GET['error']) ? intval($_GET['error']) : null;
 
 $errors = array();
@@ -26,7 +28,7 @@ $message = preg_replace_callback('`\[([A-Z_]+)\]`', function($m) {
   <head>
     <title><?php echo $code; ?> - <?php echo $title; ?></title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="<?php echo BASEDIR_RBPI; ?>/_index/style.css">
+    <link rel="stylesheet" href="<?php echo BASEDIR_RBPI; ?>/web/style.css">
   </head>
   <body class="error">
     <div id="error-links">
