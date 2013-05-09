@@ -1,12 +1,33 @@
 <?php
 
-define('RBPI_VERSION', '0.0.1');
+// error_reporting(E_ALL); ini_set('display_errors', 1);
+
+/**************************************************
+ *   Defines                                      *
+ **************************************************/
+
+define('RBPI_VERSION', '0.0.2');
 
 define('BASEDIR_INDEX', dirname(__FILE__) . DIRECTORY_SEPARATOR);
-define('BASEDIR', realpath(BASEDIR_INDEX) . DIRECTORY_SEPARATOR);
+define('BASEDIR', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 define('DIR_INDEX', str_replace(BASEDIR, null, realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR));
 define('BASEDIR_RBPI', str_replace($_SERVER['DOCUMENT_ROOT'], null, BASEDIR));
 define('ROOT_RBPI', $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR);
+
+
+/**************************************************
+ *   Vendors                                      *
+ **************************************************/
+
+include_once BASEDIR . '/lib/markdown/Michelf/Markdown.php';
+
+# Get Markdown class
+use \Michelf\Markdown;
+
+
+/**************************************************
+ *   Functions                                    *
+ **************************************************/
 
 function list_files($dir = '.', $listFile = true, $listDir = true)
 {
