@@ -1,9 +1,9 @@
-RB(pi)
+RB(&pi;)
 =====
 
-Welcome to the GitHub project page of __RB(pi)__.
+Welcome to the GitHub project page of __RB(&pi;)__.
 
-RB(pi) gives you a nice home page to your apache/lighttp/ngnix server, and change the default rendering of the file browser.
+RB(&pi;) gives you a nice home page to your apache/lighttp/ngnix server, and change the default rendering of the file browser.
 
 __Index page__
 
@@ -63,3 +63,5 @@ Personalize files & directories
 ===============================
 You can create a file
 Create optional files to persolnalize files and directories thanks to `.options` file
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/c4d32f4c248e9cab1edfd106d7fbdaeb "githalytics.com")](http://githalytics.com/Thiktak/RBPi)
