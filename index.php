@@ -55,7 +55,7 @@ define('DISPLAY_UP', false);
     <link rel="stylesheet" href="<?php echo BASEDIR_RBPI; ?>/web/style.css">
   </head>
   <body class="index">
-    <a data-scroll-to="content" href="#content">
+    <a tabindex="-1" data-scroll-to="content" href="#content">
       <div id="rbpi">
         <header id="header" role="header">
           <hgroup>
@@ -74,12 +74,12 @@ define('DISPLAY_UP', false);
     </aside>
     <div id="content">
       <section class="content">
-        <a id="scroll-up" data-scroll-to="rbpi" href="#rbpi">&#9650;</a>
+        <a tabindex="-1" id="scroll-up" data-scroll-to="rbpi" href="#rbpi">&#9650;</a>
 <?php include BASEDIR_INDEX . 'dir.php'; ?>
       </section>
     </div>
     <footer id="footer" role="footer">
-      &copy; Olivarès Georges - rb(&pi;) v<?php echo RBPI_VERSION; ?> - PHP <?php echo phpversion(); ?>
+      &copy; <a href="https://github.com/Thiktak/RBPi">Olivarès Georges</a> - rb(&pi;) v<?php echo RBPI_VERSION; ?> - PHP <?php echo phpversion(); ?>
     </footer>
     <script src="<?php echo BASEDIR_RBPI; ?>/web/jquery.min.js"></script>
     <script src="<?php echo BASEDIR_RBPI; ?>/web/jquery.scrollTo.min.js"></script>
