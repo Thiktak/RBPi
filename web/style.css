@@ -80,7 +80,7 @@ address { margin-top: 1em; opacity: .5; font-size: .75em; }
 
 .content { max-width: 1200px; margin: auto auto !important; }
 
-.description { margin-top: 1em; opacity: .5; }
+.description { margin-top: 1em; opacity: .5; font-size: .75em; }
 
 #footer {
   position: fixed; left: 0; right: 0; bottom: 0;
@@ -91,11 +91,10 @@ address { margin-top: 1em; opacity: .5; font-size: .75em; }
   box-shadow: 0 0 2em 0 #1B191A;
   height: 3.25%;
 }
-#footer a { color: inherit; text-decoration: none; }
 
 .files { width: 100%; margin: 2em 0; border-collapse: collapse; }
 .files thead th { text-transform: uppercase; font-size: .75em; color: darkgray; padding: .5em 1em; }
-.files tbody tr { outline: 0; }
+.files tbody tr { outline: 0; background-color: rgba(255, 255, 255, .25); }
 .files tbody tr td { border-top: 1px solid rgba(0, 0, 0, .05); }
 .files tbody tr:hover { background-color: rgba(200, 255, 200, .15); }
 .files tbody tr:focus { background-color: rgba(118, 169, 40, .15); }
@@ -151,8 +150,6 @@ ul.ariane li a:hover { background-color: rgba(189, 17, 67, .1); }
 .md code { padding: .15em .25em; background-color: #eaeaea; font-family: 'Lucida console', 'courier'; font-size: .75em; color: darkred; border: 1px solid #c0c0c0; border-radius: 5px; }
 .md pre code { display: block; padding: 1em; margin: .5em; background-color: #eaeaea; }
 
-.md a { color: darkred; }
-
 @media screen and (max-width: 640px) {
   .files thead tr > *:nth-child(3),
   .files tbody tr > *:nth-child(3),
@@ -171,4 +168,6 @@ ul.ariane li a:hover { background-color: rgba(189, 17, 67, .1); }
   #footer { height: 1%; line-height: 1em; }
 
   #error-global { font-size: .85em; }
+
+  h1 { font-size: 1em; }
 }
