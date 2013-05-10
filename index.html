@@ -1,0 +1,145 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>RBPi</title>
+  <meta name="description" content="Index page for RasberryPi">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">RBPi</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">Index page for RasberryPi</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/Thiktak/RBPi/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/Thiktak/RBPi/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/Thiktak/RBPi" class="code">View RBPi on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>RB(π)</h1>
+
+<p>Welcome to the GitHub project page of <strong>RB(π)</strong>.</p>
+
+<p>RB(π) gives you a nice home page to your apache/lighttp/ngnix server, and change the default rendering of the file browser.</p>
+
+<p><strong>Index page</strong></p>
+
+<p><img src="https://raw.github.com/Thiktak/RBPi/master/doc/screen1.jpg" alt="Screen"><img src="https://raw.github.com/Thiktak/RBPi/master/doc/screen2.png" alt="Screen"></p>
+
+<ul>
+<li>
+<strong>List</strong> files &amp; directories</li>
+<li>
+<strong>Personalize</strong> icon, display (hidden or not), description</li>
+<li><strong>Automatically applied to all subfolders</strong></li>
+<li>Keyboard navigation</li>
+<li>Auto display README.md file</li>
+</ul><p><a href="https://github.com/Todo" class="user-mention">@Todo</a> :</p>
+
+<ul>
+<li>Compress &amp; optimize CSS</li>
+<li>Add principal home page navigation (personnal links)</li>
+<li>Add icons (type)</li>
+</ul><h2>Installation</h2>
+
+<h3>1. Clone repository</h3>
+
+<p><code>git clone git://github.com/Thiktak/RBPi.git</code></p>
+
+<h3>2. Install RB(pi)</h3>
+
+<pre><code>mv index.php index.old.php
+mv .htaccess .htaccess.old
+cp RBPI/install/* .
+cp RBPI/install/.htaccess .htaccess
+</code></pre>
+
+<h3>3. Edit your server</h3>
+
+<h4>Apache</h4>
+
+<p>Edit <strong>httpd.conf</strong> or any <strong>.htaccess</strong></p>
+
+<p><code>DirectoryIndex index.php index.html /index.php</code></p>
+
+<h4>Lighttpd</h4>
+
+<p>Edit <strong>lighttpd.conf</strong></p>
+
+<p><code>index-file.names += ( "index.php", "index.php", "/index.php")</code></p>
+
+<h4>Ngnix</h4>
+
+<p>Edit <strong>nginx.conf</strong></p>
+
+<p><code>index  index.php index.html /index.php</code></p>
+
+<h1>Personalize files &amp; directories</h1>
+
+<p>You can create a file
+Create optional files to persolnalize files and directories thanks to <code>.options</code> file</p>
+
+<pre><code># Option of current irectory
+icon = 'icon-raspberry'
+description = 'My little description'
+hidden = false
+
+[my_sub_directory]
+    # Options
+
+[my_files.ext]
+    # Options
+</code></pre>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/Thiktak" class="avatar"><img src="https://secure.gravatar.com/avatar/4d880c313c08c2a03ff877647e9ad770?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="48" height="48"/></a> <a href="https://github.com/Thiktak">Thiktak</a> maintains <a href="https://github.com/Thiktak/RBPi">RBPi</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/Thiktak/RBPi/tarball/master" class="tar">tar</a><a href="https://github.com/Thiktak/RBPi/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-40793088-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+</body>
+</html>
