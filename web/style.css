@@ -136,7 +136,7 @@ ul.ariane li a:hover { background-color: rgba(189, 17, 67, .1); }
   border-left: 5px solid darkred;
 }
 
-.md { font-size: .9em; }
+.md { margin-top: 3em; margin-bottom: 3em; font-size: .9em; }
 .md * { font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans'; }
 
 .md p{ text-align: justify; }
