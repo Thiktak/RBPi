@@ -40,7 +40,7 @@ $(window).ready(function() {
     var pos = el.attr('tabindex');
     el.focus();
   }
-  else
+  else if( !$('#rbpi').length )
   {
     el = $('tr[tabindex=1]');
     var pos = el.attr('tabindex');
@@ -48,9 +48,16 @@ $(window).ready(function() {
   }
 });
 
-$(document).bind('keydown', 'space', function () {
-  goTo('#content');
-  e.preventDefault();
+$(document).bind('keydown', 'space', function (e) {
+  // index page !
+  if( $('#rbpi').length ) {
+
+    // top of the page ?
+    if( $(window).scrollTop() < 300 ) {
+      goTo('#content');
+      e.preventDefault();
+    }
+  }
 });
 
 $(window).bind('keypress', function(e) {
@@ -77,7 +84,7 @@ $(window).bind('keypress', function(e) {
       break;
 
     default:
-      console.log('key:' + e.keyCode);
+      //console.log('key:' + e.keyCode);
       break;
   }
 });
