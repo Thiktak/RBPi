@@ -22,6 +22,8 @@ $tabIndex = 1;
 $ariane = explode(DIRECTORY_SEPARATOR, trim($dirToExplore, DIRECTORY_SEPARATOR));
 $ariane = array_merge(array('/' => 'rb(&pi;)'), array_combine($ariane, $ariane));
 
+$optionDirectory = RBPiFiles::getOptions(ROOT_RBPI . $dirToExplore);
+
 if( DISPLAY_HTML ): ?><!DOCTYPE html>
 <html>
   <head>
@@ -45,6 +47,10 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
         </ul>
       </h1>
 
+      <?php if( $optionDirectory['description'] ): ?>
+      <p class="description"><?php echo $optionDirectory['description']; ?></p>
+      <?php endif; ?>
+
       <table class="files">
         <thead>
           <tr>
@@ -56,7 +62,7 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
           </tr>
         </thead>
         <tbody>
-        <?php foreach( list_files(ROOT_RBPI . $dirToExplore, true, true) as $href => $dir ):
+        <?php foreach( RBPiFiles::getList(ROOT_RBPI . $dirToExplore) as $href => $dir ):
           if( !DISPLAY_UP && in_array($href, array('/.', '/..'))) continue;
         ?>
           <tr tabindex="<?php echo $tabIndex++; ?>">
