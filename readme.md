@@ -64,4 +64,17 @@ Personalize files & directories
 You can create a file
 Create optional files to persolnalize files and directories thanks to `.options` file
 
+```
+# Option of current directory
+icon = 'icon-raspberry'
+description = 'My little description'
+hidden = false
+
+[my_sub_directory]
+    # Options
+
+[my_files.ext]
+    # Options
+```
+
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/c4d32f4c248e9cab1edfd106d7fbdaeb "githalytics.com")](http://githalytics.com/Thiktak/RBPi)
