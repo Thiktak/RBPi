@@ -7,7 +7,7 @@ $('a[data-scroll-to]').on('click', function(e) {
     e.preventDefault();
 });
 
-var pos = 0;
+var pos = 1;
 var maxPos = 100;
 
 function focusTabIndex(i) {
@@ -39,6 +39,12 @@ $(window).ready(function() {
     el = $('#' + hash).parents('tr[tabindex]');
     var pos = el.attr('tabindex');
     el.focus();
+  }
+  else
+  {
+    el = $('tr[tabindex=1]');
+    var pos = el.attr('tabindex');
+    el.focus(); 
   }
 });
 
