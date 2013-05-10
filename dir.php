@@ -90,7 +90,7 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
         </tbody>
       </table>
 
-      <?php if( file_exists($f = ROOT_RBPI . $dirToExplore . DIRECTORY_SEPARATOR . 'readme.md') ): ?>
+      <?php if( file_exists($f = ROOT_RBPI . $dirToExplore . DIRECTORY_SEPARATOR . 'readme.md') OR file_exists($f = ROOT_RBPI . $dirToExplore . DIRECTORY_SEPARATOR . 'README.md') ): ?>
       <div class="md">
         <?php echo preg_replace('`href="(.[^"]+)"`sUi', 'href="$1" tabindex="-1"', Markdown::defaultTransform(file_get_contents($f))); ?>
       </div>
