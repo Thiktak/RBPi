@@ -92,7 +92,7 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
 
       <?php if( file_exists($f = ROOT_RBPI . $dirToExplore . DIRECTORY_SEPARATOR . 'readme.md') ): ?>
       <div class="md">
-        <?php echo Markdown::defaultTransform(file_get_contents($f)); ?>
+        <?php echo preg_replace('`href="(.[^"]+)"`sUi', 'href="$1" tabindex="-1"', Markdown::defaultTransform(file_get_contents($f))); ?>
       </div>
       <?php endif; ?>
 
