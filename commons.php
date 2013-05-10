@@ -139,4 +139,28 @@ Class RBPiFiles
     }
 }
 
+/**
+ * @source http://www.awcore.com/php/snippets/104/Convert-octets-to-Ko-Mo-Go_en
+ */
+function size2String($octet){
+    $unite = array(' o', ' Ko', ' Mo', ' Go');
+ 
+    if ($octet < 1000) {
+        return $octet.$unite[0];
+    } else {
+        if ($octet < 1000000) {
+            $ko = round($octet/1024,2);
+            return $ko.$unite[1];
+        } else {
+            if ($octet < 1000000000) {
+                $mo = round($octet/(1024*1024),2);
+                return $mo.$unite[2];
+            } else {
+                $go = round($octet/(1024*1024*1024),2);
+                return $go.$unite[3];
+            }
+        }
+    }
+}
+
 ?>

@@ -3,8 +3,6 @@
 include_once dirname(__FILE__) . '/commons.php';
 use \Michelf\Markdown; // dependencies Markdown
 
-
-
 if( !defined('DISPLAY_HTML') )
   define('DISPLAY_HTML', true);
 
@@ -28,7 +26,7 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>rp(&pi;) - <?php echo ucfirst($dirToExplore); ?></title>
+    <title>rb(&pi;) - <?php echo ucfirst($dirToExplore); ?></title>
     <meta name="author" content="Olivarès Georges" />
     <link rel="stylesheet" href="<?php echo BASEDIR_RBPI; ?>/web/style.css">
   </head>
@@ -77,7 +75,7 @@ if( DISPLAY_HTML ): ?><!DOCTYPE html>
             </td>
             <td>
               <?php if( $dir['size'] ): ?>
-              <?php echo $dir['size']; ?> <span class="ppi">o</span>
+              <?php echo preg_replace('`([a-zA-Z]+)`', '<span class="ppi">$1</span>', size2String($dir['size'])); ?> 
               <?php else: ?>
               <span class="pi">-</span>
               <?php endif; ?>
