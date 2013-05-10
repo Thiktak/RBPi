@@ -8,6 +8,7 @@ RB(pi) gives you a nice home page to your apache/lighttp/ngnix server, and chang
 __Index page__
 
 ![Screen](https://raw.github.com/Thiktak/RBPi/master/doc/screen1.jpg)
+![Screen](https://raw.github.com/Thiktak/RBPi/master/doc/screen2.png)
 
 Installation
 ------------
