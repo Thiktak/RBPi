@@ -10,6 +10,19 @@ __Index page__
 ![Screen](https://raw.github.com/Thiktak/RBPi/master/doc/screen1.jpg)
 ![Screen](https://raw.github.com/Thiktak/RBPi/master/doc/screen2.png)
 
+* __List__ files & directories
+* __Personalize__ icon, display (hidden or not), description
+* __Automatically applied to all subfolders__
+* Keyboard navigation
+* Auto display README.md file
+
+
+@Todo :
+
+* Compress & optimize CSS
+* Add principal home page navigation (personnal links)
+* Add icons (type)
+
 Installation
 ------------
 
